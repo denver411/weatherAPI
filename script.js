@@ -18,7 +18,7 @@ function getWeather(city) {
   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=d53ae71614252d7dc62952a645eafc29&units=metric&lang=ru`)
   .then(data => data.json())
   .then(data => {
-    console.log(data);
+    // console.log(data);
     ReactDOM.render(<Weather data={data}/>, document.querySelector('.container'));
     })
   .catch(console.log)
