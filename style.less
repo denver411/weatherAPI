@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800&subset=cyrillic');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  color: #ffffff;
+  background-color: #cccccc;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: flex-start;
+  height: 600px;
+  width: 800px;
+  padding-left: 100px;
+  padding-top: 50px;
+  background-image: url(img/background.png);
+  background-color: cornflowerblue;
+  &__search-city {
+    width: 230px;
+    height: 40px;
+    padding-left: 30px;
+    // background-blend-mode: overlay, normal;
+    // background-image: linear-gradient(135deg, rgb(0, 0, 0), rgb(255, 255, 255)), linear-gradient(rgb(123, 175, 217), rgb(123, 175, 217));
+    border: solid 1px rgb(83, 153, 230);
+  }
+  &__city {
+    margin-top: 80px;
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    text-align: left;
+  }
+  &__date {
+    font-size: 12px;
+    opacity: 0.7;
+  }
+  &__temp {
+    font-size: 80px;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+  &__description {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    opacity: 0.7;
+  }
+  &__temp-range {
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 0.8;
+    letter-spacing: -0.8px;
+    opacity: 0.5;
+  }
+}
