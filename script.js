@@ -8,7 +8,7 @@ const Weather = ({data}) => {
 			</form>
 			<h2 className="weather__city">{data.name}</h2>
 			<span className="weather__date">now</span>
-			<span className="weather__temp">{data.main.temp}&deg;</span>
+			<span className="weather__temp">{data.main.temp.toFixed(1)}&deg;</span>
 			<span className="weather__description">{data.weather[0].main}</span>
 		</div>
    )
