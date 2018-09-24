@@ -19,14 +19,15 @@ body {
 .weather {
   display: flex;
   flex-direction: column;
-  align-items: left;
   justify-content: flex-start;
   height: 600px;
   width: 800px;
   padding-left: 10%;
-  padding-top: 70px;
   background-image: url(img/background.png);
   background-color: cornflowerblue;
+}
+.weather__search-form {
+  margin-top: 70px;
 }
 .weather__search-city {
   width: 230px;
@@ -35,7 +36,7 @@ body {
   border: solid 1px #5399e6;
 }
 .weather__city {
-  margin-top: 80px;
+  margin-top: 50px;
   font-size: 24px;
   font-weight: 800;
   letter-spacing: 0.3px;
@@ -60,6 +61,7 @@ body {
 }
 .weather__icon {
   grid-area: icon;
+  align-self: end;
   width: 50px;
 }
 .weather__description {
