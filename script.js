@@ -22,7 +22,7 @@ const Weather = ({ data }) => {
       </span>
       <img
         className="weather__icon"
-        src={`http://openweathermap.org/img/w/${
+        src={`https://openweathermap.org/img/w/${
           data.list[0].weather[0].icon
         }.png`}
       />
