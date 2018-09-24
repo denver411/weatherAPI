@@ -51,6 +51,9 @@ body {
   font-weight: 300;
   letter-spacing: 1px;
 }
+.weather__icon {
+  width: 50px;
+}
 .weather__description {
   font-size: 24px;
   font-weight: 600;
