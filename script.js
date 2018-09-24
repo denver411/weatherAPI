@@ -15,6 +15,7 @@ const Weather = ({ data }) => {
       </form>
       <h2 className="weather__city">{data.city.name}</h2>
       <span className="weather__date">now</span>
+      <div className="weather__today">
       <span className="weather__temp">
         {data.list[0].main.temp.toFixed(1)}
         &deg;
@@ -28,6 +29,7 @@ const Weather = ({ data }) => {
       <span className="weather__description">
         {data.list[0].weather[0].main}
       </span>
+      </div>
     </div>
   );
 };
