@@ -90,4 +90,4 @@ navigator.geolocation.getCurrentPosition(function(position) {
   const geo = { lat: position.coords.latitude, lon: position.coords.longitude };
   getWeather(geo);
   // console.log(position.coords.latitude, position.coords.longitude);
-});
+}, () => getWeather("Saint Petersburg"));
