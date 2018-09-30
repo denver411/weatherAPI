@@ -72,9 +72,10 @@ const WeatherBlock = ({ data }) => {
     5: "Friday",
     6: "Saturday"
   };
+  const dateWeek = new Date(data.dt_txt);
   return (
     <div className="block">
-      <h3 className="block__title">{weekDay[new Date(data.dt_txt).getDay()]}</h3>
+      <h3 className="block__title">{weekDay[dateWeek.getDay()]}</h3>
       <img
         className="block__icon"
         src={`https://openweathermap.org/img/w/${data.weather[0].icon}.png`}
