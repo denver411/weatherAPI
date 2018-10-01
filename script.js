@@ -62,10 +62,9 @@ const newWeather = event => {
 };
 
 const WeatherBlock = ({ data, startItem }) => {
-
   let minTemp = data[startItem].main.temp_min;
   let maxTemp = data[startItem].main.temp_max;
-  for (let i = (startItem + 1); i < (startItem + 8); i++) {
+  for (let i = startItem + 1; i < startItem + 8; i++) {
     minTemp = Math.min(minTemp, data[i].main.temp_min);
     maxTemp = Math.max(maxTemp, data[i].main.temp_max);
   }
@@ -94,7 +93,9 @@ const WeatherBlock = ({ data, startItem }) => {
         &deg; / {maxTemp.toFixed(0)}
         &deg;
       </span>
-      <span className="block__description">{data[startItem].weather[0].main}</span>
+      <span className="block__description">
+        {data[startItem].weather[0].main}
+      </span>
     </div>
   );
 };
