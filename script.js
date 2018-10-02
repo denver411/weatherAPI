@@ -62,6 +62,7 @@ const newWeather = event => {
 };
 
 const WeatherBlock = ({ data, startItem }) => {
+ 
   let minTemp = data[startItem].main.temp_min;
   let maxTemp = data[startItem].main.temp_max;
   for (let i = startItem + 1; i < startItem + 8; i++) {
@@ -79,25 +80,24 @@ const WeatherBlock = ({ data, startItem }) => {
     6: 'Saturday'
   };
   const dateWeek = new Date(data[startItem].dt_txt);
+  
   return (
     <div className="block">
       <h3 className="block__title"> {weekDay[dateWeek.getDay()]} </h3>
       <img
         className="block__icon"
-        src={`https://openweathermap.org/img/w/${
-          data[startItem].weather[0].icon
-        }.png`}
+        src={`https://openweathermap.org/img/w/${data[startItem].weather[0].icon}.png`}
       />
       <span className="block__temp">
-        {minTemp.toFixed(0)}
-        &deg; / {maxTemp.toFixed(0)}
+        {maxTemp.toFixed(0)}
+        &deg; / {minTemp.toFixed(0)}
         &deg;
       </span>
       <span className="block__description">
         {data[startItem].weather[0].main}
       </span>
     </div>
-  );
+  )
 };
 // document.addEventListener('DOMContentLoaded', getWeather('Saint Petersburg'));
 
