@@ -1,7 +1,7 @@
 'use strict';
 
 const Weather = ({ data }) => {
-  const startListItem = (24 - new Date(data.list[0].dt_txt).getHours()) / 3;
+  const startListItem = (24 - new Date(data.list[0].dt * 1000).getHours()) / 3;
 
   return (
     <div className="weather">
@@ -61,14 +61,14 @@ const newWeather = event => {
   getWeather(event.currentTarget.elements[0].value);
 };
 
-const WeatherBlock = ({ data, startItem }) => {
+const WeatherBlock = ({data, startItem}) => {
  
   let minTemp = data[startItem].main.temp_min;
   let maxTemp = data[startItem].main.temp_max;
   for (let i = startItem + 1; i < startItem + 8; i++) {
     minTemp = Math.min(minTemp, data[i].main.temp_min);
     maxTemp = Math.max(maxTemp, data[i].main.temp_max);
-  }
+  };
 
   const weekDay = {
     0: 'Sunday',
@@ -79,19 +79,16 @@ const WeatherBlock = ({ data, startItem }) => {
     5: 'Friday',
     6: 'Saturday'
   };
-  const dateWeek = new Date(data[startItem].dt_txt);
+  const dateWeek = new Date(data[startItem].dt * 1000);
   
   return (
     <div className="block">
       <h3 className="block__title"> {weekDay[dateWeek.getDay()]} </h3>
       <img
         className="block__icon"
-        src={`https://openweathermap.org/img/w/${data[startItem].weather[0].icon}.png`}
-      />
+        src={`https://openweathermap.org/img/w/${data[startItem].weather[0].icon}.png`} />
       <span className="block__temp">
-        {maxTemp.toFixed(0)}
-        &deg; / {minTemp.toFixed(0)}
-        &deg;
+        {maxTemp.toFixed(0)}&deg; / {minTemp.toFixed(0)}&deg;
       </span>
       <span className="block__description">
         {data[startItem].weather[0].main}
@@ -107,7 +104,7 @@ navigator.geolocation.getCurrentPosition(
       lat: position.coords.latitude,
       lon: position.coords.longitude
     };
-    getWeather(geo);
+      getWeather(geo);   
     // console.log(position.coords.latitude, position.coords.longitude);
   },
   () => getWeather('Saint Petersburg')
